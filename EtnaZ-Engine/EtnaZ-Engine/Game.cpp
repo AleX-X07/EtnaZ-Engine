@@ -1,7 +1,7 @@
 #include "Game.h"
 #include "MainMenu.h"
 
-Game::Game(RenderWindow* window, vector<GameState*>* _states) : GameState(window, _states) {
+Game::Game(RenderWindow* window, vector<GameState*>* _states) : GameState(window, _states), gOBuild(false) {
 
 }
 
@@ -17,10 +17,24 @@ void Game::manageState() {
 	}
 }
 
-void Game::update(float& dt) {
 
+void Game::setEntity() {
+	if (!gOBuild) {
+		GameObject* testBloc = new GameObject(100, 100, 100, 100);
+		gameObject.push_back(testBloc);
+		gOBuild = true;
+	}
+}
+
+void Game::update(float& dt) {
+	setEntity();
+	for (auto gO : gameObject) {
+		gO->update(dt);
+	}
 }
 
 void Game::render() {
-	cout << "Game" << endl;
+	for (auto gO : gameObject) {
+		gO->render(window);
+	}
 }
