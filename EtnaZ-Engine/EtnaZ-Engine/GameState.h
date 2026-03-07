@@ -3,7 +3,6 @@
 #include <iostream>
 
 #include "Globals.h"
-#include "Input.h"
 
 using namespace std;
 
@@ -13,7 +12,6 @@ protected:
 	RenderWindow* window;
 	vector<Texture*> textures;
 	vector<GameState*>* states;
-	Input input;
 
 public:
 	GameState() = default;
@@ -21,7 +19,6 @@ public:
 	virtual ~GameState() = default;
 
 	void nextState(vector<GameState*>* states);
-	void setInput(Input &input);
 
 	virtual void manageState() = 0;
 	virtual void update(float& dt) = 0;

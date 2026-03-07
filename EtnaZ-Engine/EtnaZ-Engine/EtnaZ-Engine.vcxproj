@@ -134,7 +134,6 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameEngine.cpp" />
     <ClCompile Include="GameState.cpp" />
-    <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
   </ItemGroup>
@@ -143,7 +142,6 @@
     <ClInclude Include="GameEngine.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Globals.h" />
-    <ClInclude Include="Input.h" />
     <ClInclude Include="MainMenu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

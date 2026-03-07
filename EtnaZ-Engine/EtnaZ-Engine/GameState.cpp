@@ -9,7 +9,3 @@ void GameState::nextState(vector<GameState*>* states) {
 		states->pop_back();
 	}
 }
-
-void GameState::setInput(Input &_input) {
-	input = _input;
-}

@@ -45,9 +45,6 @@
     <ClCompile Include="Game.cpp">
       <Filter>Fichiers sources\Game\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="Input.cpp">
-      <Filter>Fichiers sources\Tool</Filter>
-    </ClCompile>
     <ClCompile Include="GameState.cpp">
       <Filter>Fichiers sources\Game\Scene</Filter>
     </ClCompile>
@@ -63,9 +60,6 @@
       <Filter>Fichiers d%27en-tête\Game\Scene</Filter>
     </ClInclude>
     <ClInclude Include="Globals.h">
-      <Filter>Fichiers d%27en-tête\Tool</Filter>
-    </ClInclude>
-    <ClInclude Include="Input.h">
       <Filter>Fichiers d%27en-tête\Tool</Filter>
     </ClInclude>
     <ClInclude Include="GameState.h">

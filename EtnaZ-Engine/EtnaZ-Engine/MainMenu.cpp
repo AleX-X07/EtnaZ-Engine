@@ -11,20 +11,13 @@ void MainMenu::Instance(RenderWindow* window, vector<GameState*>*& states) {
 }
 
 void MainMenu::manageState() {
-	if (input.currentInputKey) {
-		if (input.currentInputKey->scancode == Keyboard::Scancode::D) {
-			GameState::nextState(states);
-			Game::Instance(window, states);
-		}
-	}
-	/*if (Keyboard::isKeyPressed(Keyboard::Key::D)) {
+	if (Keyboard::isKeyPressed(Keyboard::Key::D)) {
 		GameState::nextState(states);
 		Game::Instance(window, states);
-	}*/
+	}
 }
 
 void MainMenu::update(float& dt) {
-	
 
 }
 
