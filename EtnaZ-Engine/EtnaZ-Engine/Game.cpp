@@ -22,6 +22,11 @@ void Game::setEntity() {
 	if (!gOBuild) {
 		GameObject* testBloc = new GameObject(100, 100, 100, 100);
 		gameObject.push_back(testBloc);
+
+		Player* testPlayer = new Player(100, 100, 100, 100);
+		testPlayer->setColor({0,255,0,255});
+		gameObject.push_back(testPlayer);
+
 		gOBuild = true;
 	}
 }
@@ -29,7 +34,7 @@ void Game::setEntity() {
 void Game::update(float& dt) {
 	setEntity();
 	for (auto gO : gameObject) {
-		gO->update(dt);
+		gO->update(dt,input);
 	}
 }
 

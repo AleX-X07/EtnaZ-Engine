@@ -11,6 +11,11 @@ GameObject::GameObject(float x, float y, float w, float h) : pos({ x,y }), size(
 	rect.setScale(scale);
 }
 
+GameObject::~GameObject() {
+	delete tex;
+	tex = nullptr;
+}
+
 
 Texture* GameObject::getTexture() {
 	return tex;
@@ -29,16 +34,20 @@ void GameObject::setTexture(Texture* nTex) {
 	tex = nTex;
 }
 
+void GameObject::setColor(Color nColor) {
+	rect.setFillColor(nColor);
+}
+
 void GameObject::setPos(Vector2f nPos) {
-	pos = nPos;
+	rect.setPosition(nPos);
 }
 
 void GameObject::setSize(Vector2f nSize) {
-	size = nSize;
+	rect.setSize(nSize);
 }
 
 void GameObject::setScale(Vector2f nScale) {
-	scale = nScale;
+	rect.setScale(nScale);
 }
 
 
@@ -51,7 +60,7 @@ void GameObject::setVisibilityFalse() {
 }
 
 
-void GameObject::update(float& dt) {
+void GameObject::update(float& dt, Input& input) {
 
 }
 

@@ -1,6 +1,7 @@
 #pragma once
 #include "GameState.h"
 #include "GameObject.h"
+#include "Player.h"
 
 class MainMenu;
 
