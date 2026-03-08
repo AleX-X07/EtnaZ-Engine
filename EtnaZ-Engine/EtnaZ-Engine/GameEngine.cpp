@@ -5,6 +5,7 @@ GameEngine::GameEngine() {
 	dt = 0;
 	states = new vector<GameState*>;
 	clock.restart();
+	input = Input();
 }
 
 GameEngine::~GameEngine() {

@@ -57,6 +57,9 @@
     <ClCompile Include="GameObject.cpp">
       <Filter>Fichiers sources\GameObject</Filter>
     </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Fichiers sources\Tool</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameEngine.h">
@@ -76,6 +79,9 @@
     </ClInclude>
     <ClInclude Include="GameObject.h">
       <Filter>Fichiers d%27en-tête\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Fichiers d%27en-tête\Tool</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

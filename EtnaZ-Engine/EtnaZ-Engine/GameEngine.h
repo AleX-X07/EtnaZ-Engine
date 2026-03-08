@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include "Globals.h"
+#include "Input.h"
 
 #include "GameState.h"
 #include "MainMenu.h"
@@ -15,9 +16,7 @@ private:
 	float dt;
 	vector<GameState*>* states;
 	Clock clock;
-
-	const Event::KeyPressed* currentInputKey;
-	const Event::MouseButtonPressed* currentInputMouse;
+	Input input;
 
 public:
 	GameEngine();
