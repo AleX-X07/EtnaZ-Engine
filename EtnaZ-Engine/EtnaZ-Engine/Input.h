@@ -4,15 +4,22 @@
 class Input
 {
 private:
-	const Event::KeyPressed* key;
-	const Event::MouseButtonPressed* mouse;
+	bool keyPressed;
+	Keyboard::Key key;
+
+	bool mousePressed;
+	Mouse::Button mouse;
+	Vector2i mousePos;
 
 public:
 	Input();
-	~Input();
+	~Input() = default;
 
-	void getEvent(Event* event);
-	const Event::KeyPressed* getKey();
-	const Event::MouseButtonPressed* getMouse();
+	void setEvent(const Event event);
+	void reset();
+
+	bool isKeyPressed(Keyboard::Key key);
+	bool isMousePressed(Mouse::Button button);
+	Vector2i getMousePos();
 };
 

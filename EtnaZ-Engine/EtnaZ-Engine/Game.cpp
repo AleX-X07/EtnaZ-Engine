@@ -1,19 +1,19 @@
 #include "Game.h"
 #include "MainMenu.h"
 
-Game::Game(RenderWindow* window, vector<GameState*>* _states) : GameState(window, _states), gOBuild(false) {
+Game::Game(RenderWindow* window, vector<GameState*>* _states, Input& _input) : GameState(window, _states, _input), gOBuild(false) {
 
 }
 
-void Game::Instance(RenderWindow* window, vector<GameState*>*& states) {
-	GameState* mainMenu = new Game(window, states);
+void Game::Instance(RenderWindow* window, vector<GameState*>*& states, Input& input) {
+	GameState* mainMenu = new Game(window, states, input);
 	states->push_back(mainMenu);
 }
 
 void Game::manageState() {
-	if (Keyboard::isKeyPressed(Keyboard::Key::Escape)) {
+	if (input.isKeyPressed(Keyboard::Key::Escape)) {
 		GameState::nextState(states);
-		MainMenu::Instance(window, states);
+		MainMenu::Instance(window, states, input);
 	}
 }
 

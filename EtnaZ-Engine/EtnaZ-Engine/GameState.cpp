@@ -1,6 +1,6 @@
 #include "GameState.h"
 
-GameState::GameState(RenderWindow* window, vector<GameState*>* _states) : window(window), states(_states) {
+GameState::GameState(RenderWindow* window, vector<GameState*>* _states, Input& _input) : window(window), states(_states), input(_input) {
 
 }
 

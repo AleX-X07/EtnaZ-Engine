@@ -1,27 +1,36 @@
 #include "Input.h"
 
-Input::Input() : key(nullptr), mouse(nullptr) {
+Input::Input() : keyPressed(false), mousePressed(false), mousePos({0,0}) {
 	
 }
 
-Input::~Input() {
-	delete key;
-	key = nullptr;
 
-	delete mouse;
-	mouse = nullptr;
+void Input::setEvent(const Event event) {
+    if (auto* k = event.getIf<Event::KeyPressed>()) {
+        keyPressed = true;
+        key = k->code;
+    }
+    else if (auto* m = event.getIf<Event::MouseButtonPressed>()) {
+        mousePressed = true;
+        mouse = m->button;
+        mousePos = m->position;
+    }
+}
+
+void Input::reset() {
+    keyPressed = false;
+    mousePressed = false;
 }
 
 
-void Input::getEvent(Event* event) {
-	key = event->getIf<Event::KeyPressed>();
-	mouse = event->getIf<Event::MouseButtonPressed>();
+bool Input::isKeyPressed(Keyboard::Key _key) {
+    return keyPressed && key == _key;
 }
 
-const Event::KeyPressed* Input::getKey() {
-	return key;
+bool Input::isMousePressed(Mouse::Button _button) {
+    return mousePressed && mouse == _button;
 }
 
-const Event::MouseButtonPressed* Input::getMouse() {
-	return mouse;
+Vector2i Input::getMousePos() {
+    return mousePos;
 }

@@ -14,11 +14,12 @@ GameEngine::~GameEngine() {
 }
 
 void GameEngine::updateEvent() {
-
+	input.reset();
 	while (const optional event = window->pollEvent()) {
 		if (event->is<Event::Closed>()) {
 			window->close();
 		}
+		input.setEvent(event.value());
 	}
 }
 
@@ -43,7 +44,7 @@ void GameEngine::render() {
 
 void GameEngine::run() {
 
-	MainMenu::Instance(window, states);
+	MainMenu::Instance(window, states, input);
 
 	while (window->isOpen()) {
 		updateEvent();

@@ -11,10 +11,10 @@ private:
 	bool gOBuild;
 public:
 	Game() = default;
-	Game(RenderWindow * window, vector<GameState*>* states);
+	Game(RenderWindow * window, vector<GameState*>* states, Input& input);
 	~Game() = default;
 		
-	static void Instance(RenderWindow* window, vector<GameState*>*& states);
+	static void Instance(RenderWindow* window, vector<GameState*>*& states, Input& input);
 
 	void setEntity();
 

@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "Globals.h"
+#include "Input.h"
 
 using namespace std;
 
@@ -12,10 +13,11 @@ protected:
 	RenderWindow* window;
 	vector<Texture*> textures;
 	vector<GameState*>* states;
+	Input& input;
 
 public:
 	GameState() = default;
-	GameState(RenderWindow* window, vector<GameState*>* states);
+	GameState(RenderWindow* window, vector<GameState*>* states, Input& input);
 	virtual ~GameState() = default;
 
 	void nextState(vector<GameState*>* states);
