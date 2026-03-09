@@ -1,12 +1,10 @@
 #pragma once
 #include "GameObject.h"
-#include "Camera.h"
 
 class Player : public GameObject
 {
 private:
 	float speed;
-	Camera* camera;
 public:
 	Player() = default;
 	Player(float x, float y);

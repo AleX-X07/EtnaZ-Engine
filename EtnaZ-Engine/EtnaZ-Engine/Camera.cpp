@@ -1,11 +1,14 @@
 #include "Camera.h"
-#include "GameObject.h"
 
-Camera::Camera(int zoom) {
-	camera.setPosition({0,0});
-	camera.setSize({ win_width, win_heigt });
+Camera::Camera() {
+	myView = View(FloatRect({ 0, 0 }, { win_width, win_heigt }));
 }
 
-void Camera::setCamera(GameObject* Owner) {
-	targetPos = { ((Owner->pos.x + Owner->size.x / 2) - win_width / 2) , ((Owner->pos.y + Owner->size.y / 2) - win_heigt / 2)};
+void Camera::centerView(GameObject* myObject) {
+	center = { myObject->pos.x + myObject->size.x / 2, myObject->pos.y + myObject->size.y / 2 };
+	myView.setCenter(center);
+}
+
+void Camera::setCamera(RenderWindow* window) {
+	window->setView(myView);
 }

@@ -36,6 +36,3 @@ void Player::update(float& dt, Input& input) {
 void Player::render(RenderWindow* window) {
 	GameObject::render(window);
 }
-
-
-sf::View

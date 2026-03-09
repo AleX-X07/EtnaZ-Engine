@@ -2,6 +2,8 @@
 #include "MainMenu.h"
 
 Game::Game(RenderWindow* window, vector<GameState*>* _states, Input& _input) : GameState(window, _states, _input), gOBuild(false) {
+	camera = new Camera();
+
 
 }
 
@@ -20,9 +22,17 @@ void Game::manageState() {
 
 void Game::setEntity() {
 	if (!gOBuild) {
+
+		// Background white
+		GameObject* backWhite = new GameObject(0, 0, win_width, win_heigt);
+		backWhite->setColor(Color::White);
+		gameObject.push_back(backWhite);
+
+		//Bloc
 		GameObject* testBloc = new GameObject(100, 100, 100, 100);
 		gameObject.push_back(testBloc);
 
+		// Player
 		Player* testPlayer = new Player(100, 100, 100, 100);
 		testPlayer->setColor({0,255,0,255});
 		gameObject.push_back(testPlayer);
@@ -39,6 +49,11 @@ void Game::update(float& dt) {
 }
 
 void Game::render() {
+
+	// Camera
+	camera->centerView(gameObject.back());
+	camera->setCamera(window);
+
 	for (auto gO : gameObject) {
 		gO->render(window);
 	}

@@ -1,23 +1,17 @@
 #pragma once
 #include "Globals.h"
-
-class GameObject;
+#include "GameObject.h"
 
 class Camera
 {
 private:
-	RectangleShape camera;
-	Vector2f posC;
-	Vector2f targetPos;
-	Vector2f screenSize;
-	Vector2f levelSize;
+	View myView;
+	Vector2f center;
 
 public:
-	Camera() = default;
-	Camera(int zoom);
+	Camera();
 	~Camera() = default;
 
-	void setCamera(GameObject* Owner);
-
+	void centerView(GameObject* myObject);
+	void setCamera(RenderWindow* window);
 };
-
