@@ -6,12 +6,16 @@ class Camera
 {
 private:
 	View myView;
+	Vector2f pos;
 	Vector2f center;
+	Vector2f targetPos;
+	float lag;
 
 public:
-	Camera();
+	Camera() = default;
+	Camera(float lag);
 	~Camera() = default;
 
-	void centerView(GameObject* myObject);
+	void updateCamera(GameObject* myObject);
 	void setCamera(RenderWindow* window);
 };

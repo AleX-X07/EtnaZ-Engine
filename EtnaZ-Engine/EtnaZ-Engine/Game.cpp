@@ -2,9 +2,7 @@
 #include "MainMenu.h"
 
 Game::Game(RenderWindow* window, vector<GameState*>* _states, Input& _input) : GameState(window, _states, _input), gOBuild(false) {
-	camera = new Camera();
-
-
+	camera = new Camera(0.005);
 }
 
 void Game::Instance(RenderWindow* window, vector<GameState*>*& states, Input& input) {
@@ -24,7 +22,7 @@ void Game::setEntity() {
 	if (!gOBuild) {
 
 		// Background white
-		GameObject* backWhite = new GameObject(0, 0, win_width, win_heigt);
+		GameObject* backWhite = new GameObject(0, 0, win_width, win_height);
 		backWhite->setColor(Color::White);
 		gameObject.push_back(backWhite);
 
@@ -51,7 +49,7 @@ void Game::update(float& dt) {
 void Game::render() {
 
 	// Camera
-	camera->centerView(gameObject.back());
+	camera->updateCamera(gameObject.back());
 	camera->setCamera(window);
 
 	for (auto gO : gameObject) {
