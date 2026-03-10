@@ -41,15 +41,17 @@ void Game::setEntity() {
 
 void Game::update(float& dt) {
 	setEntity();
+
+	camera->updateCamera(gameObject.back());
+
 	for (auto gO : gameObject) {
 		gO->update(dt,input);
 	}
+
 }
 
 void Game::render() {
 
-	// Camera
-	camera->updateCamera(gameObject.back());
 	camera->setCamera(window);
 
 	for (auto gO : gameObject) {
