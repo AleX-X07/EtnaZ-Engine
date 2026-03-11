@@ -28,8 +28,15 @@ void Player::controlKeayboard(float& dt, Input& input) {
     }
 }
 
+void Player::clampInScreen() {
+    pos.x = std::max(0.f, std::min(pos.x, (float)(level_size_width - size.x)));
+    pos.y = std::max(0.f, std::min(pos.y, (float)(level_size_heigt - size.y)));
+    setPos(pos);
+}
+
 void Player::update(float& dt, Input& input) {
 	controlKeayboard(dt, input);
+    clampInScreen();
 	setPos(pos);
 }
 

@@ -14,6 +14,7 @@ public:
 	void setSpeed(float nSpeed);
 
 	void controlKeayboard(float& dt, Input& input);
+	void clampInScreen();
 
 	virtual void update(float& dt, Input& input) override;
 	virtual void render(RenderWindow* window) override;
