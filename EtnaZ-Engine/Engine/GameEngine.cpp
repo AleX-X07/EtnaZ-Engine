@@ -1,15 +1,26 @@
 #include "GameEngine.h"
 
 sf::RenderWindow* GameEngine::window = nullptr;
+std::vector<GameState*> GameEngine::states;
+std::vector<GameState*> GameEngine::activeStates;
 
 GameEngine::GameEngine() {
-    window = new sf::RenderWindow(sf::VideoMode({1920,1080}), "EtnaZ-Engine");
-    
+    window = new sf::RenderWindow(sf::VideoMode::getDesktopMode(), "EtnaZ-Engine", sf::Style::Default, sf::State::Windowed);
 }
 
 GameEngine::~GameEngine() {
     delete window;
     window = nullptr;
+    
+    for (auto& aS : activeStates) {
+        delete aS;
+        aS = nullptr;
+    }
+    
+    for (auto& s : states) {
+        delete s;
+        s = nullptr;
+    }
 }
 
 void GameEngine::updateEvent() {
@@ -27,14 +38,25 @@ void GameEngine::updateTime() {
 }
 
 void GameEngine::update() {
-    
+    if (!activeStates.empty()) {
+        activeStates.back()->manageState();
+        activeStates.back()->update(dt);
+    }
 }
 
 void GameEngine::render() {
-    
+    if (!states.empty()) {
+        states.back()->render();
+    }
+    if (!activeStates.empty()) {
+        activeStates.back()->render();
+    }
 }
 
 void GameEngine::run() {
+    
+    activeStates.push_back(Menu::getMenu());
+    
     while (window->isOpen()) {
         updateEvent();
         updateTime();
