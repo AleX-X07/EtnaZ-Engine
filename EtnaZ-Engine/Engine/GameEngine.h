@@ -4,6 +4,8 @@
 class GameEngine {
 private:
     static sf::RenderWindow* window;
+    sf::Clock clock;
+    float dt;
     
 public:
     GameEngine();
