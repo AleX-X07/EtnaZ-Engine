@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 
-#include "../Scene/GameState.h"
+#include "../Engine/GameState.h"
 
 class Game : public GameState {
 

@@ -9,7 +9,7 @@ public:
 
     enum class fontsIndices{
     };
-
+    
 private:
     Textures();
     
@@ -18,9 +18,6 @@ public:
 
     sf::Texture& getTexture(texturesIndices index);
     sf::Font& getFont(fontsIndices index);
-
-    void loadAllTexture();
-    void loadAllFont();
     
     void loadTexture(texturesIndices _index, const char* filename);
     void loadFont(fontsIndices _index, const char* filename);

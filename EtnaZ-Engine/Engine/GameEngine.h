@@ -1,6 +1,7 @@
 #pragma once
-#include "../Scene/GameState.h"
+#include "../Engine/GameState.h"
 #include "SFML/Graphics.hpp"
+#include "Tool/Input.h"
 #include "../Scene/Menu.h"
 
 class GameEngine {

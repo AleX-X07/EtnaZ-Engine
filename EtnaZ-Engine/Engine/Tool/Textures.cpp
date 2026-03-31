@@ -3,8 +3,6 @@
 Textures* Textures::TextureManager = nullptr;
 
 Textures::Textures() {
-    loadAllTexture();
-    loadAllFont();
 }
 
 Textures* Textures::getTexturesManager() {
@@ -12,13 +10,6 @@ Textures* Textures::getTexturesManager() {
         TextureManager = new Textures();
     }
     return TextureManager;
-}
-
-void Textures::loadAllTexture() {
-}
-
-void Textures::loadAllFont() {
-
 }
 
 void Textures::loadTexture(texturesIndices _index, const char* fileName) {

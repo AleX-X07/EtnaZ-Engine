@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 
-#include "GameState.h"
+#include "../Engine/GameState.h"
 
 class Game;
 
