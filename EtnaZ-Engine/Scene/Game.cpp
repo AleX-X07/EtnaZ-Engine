@@ -7,7 +7,11 @@
 Game* Game::instance = nullptr;
 
 Game::Game() {
+    myPlayer = new Player(500,500,100,100);
+    myGameObject = new GameObject(1000,500,100,100);
     
+    myPlayer->setColor(sf::Color::Red);
+    myGameObject->setColor(sf::Color::White);
 }
 
 Game::~Game() {
@@ -29,9 +33,10 @@ void Game::manageState() {
 }
 
 void Game::update(float& dt) {
-    
+    myPlayer->update(dt);
 }
 
 void Game::render() {
-    std::cout << "Game" << std::endl;
+    myPlayer->render();
+    myGameObject->render();
 }

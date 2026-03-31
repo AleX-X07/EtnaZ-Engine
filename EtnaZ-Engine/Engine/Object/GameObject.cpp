@@ -1,5 +1,7 @@
 #include "GameObject.h"
 
+#include "../GameEngine.h"
+
 
 // Constructor
 // ####
@@ -78,12 +80,12 @@ void GameObject::update(float& dt) {
 
 }
 
-void GameObject::render(sf::RenderWindow* window) {
+void GameObject::render() {
     if (visibility) {
         if (tex) {
             rect.setTexture(tex);
         }
-        window->draw(rect);
+        GameEngine::window->draw(rect);
     }
 }
 // #####

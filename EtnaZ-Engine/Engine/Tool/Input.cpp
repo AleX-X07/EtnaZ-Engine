@@ -2,7 +2,7 @@
 
 #include "SFML/Window/Event.hpp"
 
-// Initalise the instance
+// Initialise the instance
 // #####
 Input* Input::instance = nullptr;
 // #####
@@ -11,6 +11,7 @@ Input* Input::instance = nullptr;
 // Constructor 
 // #####
 Input::Input() : keyPressed(false), mousePressed(false), mousePos({ 0,0 }) {
+    key = {};
     mouse = {};
     mousePos = {};
 }
@@ -40,6 +41,8 @@ void Input::reset() {
 }
 // #####
 
+// Check if key is pressed (or mouse)
+// #####
 bool Input::isKeyPressed(sf::Keyboard::Key _key) {
     return keyPressed && key == _key;
 }
@@ -47,14 +50,22 @@ bool Input::isKeyPressed(sf::Keyboard::Key _key) {
 bool Input::isMousePressed(sf::Mouse::Button _button) {
     return mousePressed && mouse == _button;
 }
+// #####
 
+// Get mouse pos
+// #####
 sf::Vector2i Input::getMousePos() {
     return mousePos;
 }
+// #####
 
+
+// Get class input (singleton)
+// #####
 Input* Input::getInstance() {
     if (instance == nullptr ) {
         instance = new Input();
     }
     return instance;
 }
+// #####

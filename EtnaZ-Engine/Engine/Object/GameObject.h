@@ -3,7 +3,7 @@
 
 // Class for create an object
 class GameObject {
-private:
+protected:
     // Variable
     sf::Texture* tex;
     sf::Color color;
@@ -29,6 +29,7 @@ public:
 
     void setTexture(sf::Texture* tex);
     void setColor(sf::Color nColor);
+    
     void setPos(sf::Vector2f nPos);
     void setSize(sf::Vector2f nSize);
     void setScale(sf::Vector2f scale);
@@ -39,5 +40,5 @@ public:
     
     // Method virtual
     virtual void update(float& dt);
-    virtual void render(sf::RenderWindow* window);
+    virtual void render();
 };
