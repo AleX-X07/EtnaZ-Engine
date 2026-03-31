@@ -7,7 +7,7 @@ Textures::Textures() {
     loadAllFont();
 }
 
-Textures* Textures::texturesManager() {
+Textures* Textures::getTexturesManager() {
     if (TextureManager == nullptr) {
         TextureManager = new Textures();
     }

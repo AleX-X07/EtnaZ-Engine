@@ -5,9 +5,6 @@ class GameEngine;
 class GameState
 {
 protected:
-    
-    static GameState* currentInstance;
-    
     GameState() = default;
     
 public:

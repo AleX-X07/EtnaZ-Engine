@@ -12,6 +12,7 @@ public:
 
 private:
     Textures();
+    
 public:
     ~Textures() = default;
 
@@ -24,7 +25,7 @@ public:
     void loadTexture(texturesIndices _index, const char* filename);
     void loadFont(fontsIndices _index, const char* filename);
 
-    static Textures* texturesManager();
+    static Textures* getTexturesManager();
 
 private:
     static Textures* TextureManager;

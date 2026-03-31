@@ -55,7 +55,7 @@ void GameEngine::render() {
 
 void GameEngine::run() {
     
-    activeStates.push_back(Menu::getMenu());
+    activeStates.push_back(Menu::getInstance());
     
     while (window->isOpen()) {
         updateEvent();
