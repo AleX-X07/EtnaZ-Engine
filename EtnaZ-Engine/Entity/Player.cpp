@@ -20,24 +20,25 @@ void Player::setSpeed(float nSpeed) {
     speed = nSpeed;
 }
 
-void Player::controllKeyboard() {
+void Player::controllKeyboard(float& dt) {
+    GameObject::update(dt);
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Z)) {
-        pos.y -= speed;
+        pos.y -= speed*dt;
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)) {
-        pos.y += speed;
+        pos.y += speed*dt;
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Q)) {
-        pos.x -= speed;
+        pos.x -= speed*dt;
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)) {
-        pos.x += speed;
+        pos.x += speed*dt;
     }
     setPos(pos);
 }
 
 void Player::update(float& dt) {
-    controllKeyboard();
+    controllKeyboard(dt);
 }
 
 void Player::render() {

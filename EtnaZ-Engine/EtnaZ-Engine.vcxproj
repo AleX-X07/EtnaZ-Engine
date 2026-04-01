@@ -314,6 +314,7 @@
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
     <ClCompile Include="Engine\Object\GameObject.cpp" />
+    <ClCompile Include="Engine\Tool\Collider.cpp" />
     <ClCompile Include="Engine\Tool\Input.cpp" />
     <ClCompile Include="Engine\Tool\Textures.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
@@ -553,6 +554,7 @@
     <ClInclude Include="Engine\GameEngine.h" />
     <ClInclude Include="Engine\GameState.h" />
     <ClInclude Include="Engine\Object\GameObject.h" />
+    <ClInclude Include="Engine\Tool\Collider.h" />
     <ClInclude Include="Engine\Tool\Input.h" />
     <ClInclude Include="Engine\Tool\Textures.h" />
     <ClInclude Include="Entity\Player.h" />

@@ -11,11 +11,10 @@ private:
     // Variable for scene
     Game();
     
-    static Game * instance;
+    static Game* instance;
 private:
     // Object in my scene
-    Player* myPlayer;
-    GameObject* myGameObject;
+    std::vector<GameObject*> entity;
     
 public:
     virtual ~Game() override;
@@ -25,4 +24,6 @@ public:
     virtual void manageState() override;
     virtual void update(float& dt) override;
     virtual void render() override;
+    
+    void collisions();
 };

@@ -14,7 +14,7 @@ public:
     
     void setSpeed(float nSpeed);
     
-    void controllKeyboard();
+    void controllKeyboard(float& dt);
     
     virtual void update(float& dt) override;
     virtual void render() override;

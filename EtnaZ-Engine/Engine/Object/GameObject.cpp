@@ -15,6 +15,8 @@ GameObject::GameObject(float x, float y, float w, float h) : pos({ x,y }), size(
     rect.setPosition(pos);
     rect.setSize(size);
     rect.setScale(scale);
+    
+    collider = nullptr;
 }
 // #####
 
@@ -32,6 +34,15 @@ sf::Vector2f GameObject::getPos() {
 sf::Vector2f GameObject::getSize() {
     return size;
 }
+
+Collider* GameObject::getCollider() {
+    return collider;
+}
+
+void GameObject::setCollider(Collider* _collider) {
+    collider = _collider;
+}
+
 // #####
 
 
@@ -77,7 +88,7 @@ void GameObject::setVisibilityFalse() {
 // Virtual method
 // #####
 void GameObject::update(float& dt) {
-
+    
 }
 
 void GameObject::render() {

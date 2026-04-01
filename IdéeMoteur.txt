@@ -1,0 +1,7 @@
+- Collision
+- Système gestion de layer
+- Modifier la classe texture
+- Editeur de niveau ? (Parseur)
+- Gestion 4 Jeu : RPG(vu de dessus), platformer, clicker, RPG(TPT)
+- Enemies
+- Systeme de combat

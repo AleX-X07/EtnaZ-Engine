@@ -1,5 +1,6 @@
 #pragma once
 #include "SFML/Graphics.hpp"
+#include "../Tool/Collider.h"
 
 // Class for create an object
 class GameObject {
@@ -14,6 +15,9 @@ protected:
 
     sf::RectangleShape rect; 
     bool visibility;
+    
+    // Object for manage collision
+    Collider* collider;
 
 public:
     // Constructor/Destructor
@@ -26,7 +30,10 @@ public:
     sf::Texture* getTexture();
     sf::Vector2f getPos();
     sf::Vector2f getSize();
+    Collider* getCollider();
 
+    void setCollider(Collider* collider);    
+    
     void setTexture(sf::Texture* tex);
     void setColor(sf::Color nColor);
     
