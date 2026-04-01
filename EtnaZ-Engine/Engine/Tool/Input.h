@@ -1,5 +1,5 @@
 #pragma once
-#include "SFMl/Graphics.hpp"
+#include "SFML/Graphics.hpp"
 
 // Singleton for Input
 // #####

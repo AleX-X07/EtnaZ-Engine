@@ -1,5 +1,7 @@
 #include "GameEngine.h"
 
+#include "../Play/Scene/Menu.h"
+
 // Initialise static
 // #####
 sf::RenderWindow* GameEngine::window = nullptr;

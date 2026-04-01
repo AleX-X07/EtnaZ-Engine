@@ -1,5 +1,5 @@
 #include "GameState.h"
-#include "../Engine/GameEngine.h"
+#include "GameEngine.h"
 
 // Function which pop the current scene f or put the other after
 // ######

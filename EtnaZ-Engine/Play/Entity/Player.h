@@ -1,5 +1,5 @@
 #pragma once
-#include "../Engine/Object/GameObject.h"
+#include "../../Engine/Object/GameObject.h"
 
 class Player : public GameObject {
 private:
