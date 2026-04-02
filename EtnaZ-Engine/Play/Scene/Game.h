@@ -1,9 +1,11 @@
 #pragma once
 #include <iostream>
 
-#include "../Engine/GameState.h"
-#include "../Engine/Object/GameObject.h"
-#include "../Entity/Player.h"
+#include "../../Engine/GameState.h"
+#include "../../Engine/Object/GameObject.h"
+#include "../../Play/Entity/Player.h"
+
+class GameEngine;
 
 class Game : public GameState {
 

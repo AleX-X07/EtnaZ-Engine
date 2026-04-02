@@ -2,7 +2,7 @@
 #include "SFML/Graphics.hpp"
 #include "../Engine/GameState.h"
 #include "Tool/Input.h"
-#include "../Scene/Menu.h"
+#include "../Play/Scene/Menu.h"
 
 class GameEngine {
 public:
