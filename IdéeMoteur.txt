@@ -5,3 +5,13 @@
 - Gestion 4 Jeu : RPG(vu de dessus), platformer, clicker, RPG(TPT)
 - Enemies
 - Systeme de combat
+
+
+
+
+Note : 
+
+Stack / Heap
+
+Stack -> rapide, mais petit et limité
+Heap -> plus lent, mais beaucoup plus grand et plus libre

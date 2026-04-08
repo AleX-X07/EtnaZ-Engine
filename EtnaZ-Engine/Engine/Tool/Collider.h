@@ -12,9 +12,12 @@ public:
    Collider(GameObject* owner);
    ~Collider() = default;
    
+   sf::RectangleShape& getBoxCollider();
+   void setBoxColliderPos(sf::Vector2f nBoxPos);
+   void setBoxColliderSize(sf::Vector2f nBoxSize);
+   
    bool isColliding(GameObject* target);
-   void resolveCollisionPlatformer(GameObject* target);
-   void resolveCollisionRPG(GameObject* target);
+   void resolveCollision(GameObject* target);
    
    void updateCollider(GameObject* target);
 };

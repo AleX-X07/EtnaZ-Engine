@@ -27,11 +27,11 @@ sf::Texture* GameObject::getTexture() {
     return tex;
 }
 
-sf::Vector2f GameObject::getPos() {
+sf::Vector2f& GameObject::getPos() {
     return pos;
 }
 
-sf::Vector2f GameObject::getSize() {
+sf::Vector2f& GameObject::getSize() {
     return size;
 }
 

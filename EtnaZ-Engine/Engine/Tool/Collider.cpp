@@ -5,6 +5,18 @@ Collider::Collider(GameObject* _owner) {
     owner = _owner;
 }
 
+sf::RectangleShape& Collider::getBoxCollider() {
+    return rect;
+}
+
+void Collider::setBoxColliderPos(sf::Vector2f nBoxPos) {
+    
+}
+
+void Collider::setBoxColliderSize(sf::Vector2f nBoxSize) {
+    rect.setSize(nBoxSize);
+}
+
 bool Collider::isColliding(GameObject* target) {
     if (owner->getPos().x < target->getPos().x + target->getSize().x && 
         owner->getPos().x + owner->getSize().x > target->getPos().x && 
@@ -15,11 +27,10 @@ bool Collider::isColliding(GameObject* target) {
     return false;
 }
 
-void Collider::resolveCollisionPlatformer(GameObject* target) {
+void Collider::resolveCollision(GameObject* target) {
+    float minX = target->getPos().x;
+    float maxX = target->getPos().x + target->getSize().x;
     
-}
-
-void Collider::resolveCollisionRPG(GameObject* target) {
     
 }
 

@@ -28,8 +28,8 @@ public:
 
     // Method get/set
     sf::Texture* getTexture();
-    sf::Vector2f getPos();
-    sf::Vector2f getSize();
+    sf::Vector2f& getPos();
+    sf::Vector2f& getSize();
     Collider* getCollider();
 
     void setCollider(Collider* collider);    
